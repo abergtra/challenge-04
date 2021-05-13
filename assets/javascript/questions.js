@@ -3,10 +3,10 @@ var myQuestions = [
     {
       question: "What is the correct way to call the random method on the Math global object?",
       answers: {
-          a: 'random.Math()', 
-          b: 'Math(randon)', 
-          c: 'Math.random()', 
-          d: 'math.random()'
+          A: 'random.Math()', 
+          B: 'Math(random)', 
+          C: 'Math.random()', 
+          D: 'math.random()'
         },
       correctAnswer: 'c'
     },
