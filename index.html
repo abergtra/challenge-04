@@ -10,11 +10,27 @@
 </head>
 <body>
     <header class="header-container">
-        <h1>Code Quiz</h1>
-        <p id="timer">Time: </p>
+        <p id="head" class="viewhigh">View High Scores</p>
+        <p class="counter">Time: <span id="timer">60</span></p>
     </header>
-    <div id="quiz"></div>
-        <button id="submit">Get Results</button>
+    
+    <div id="startpage">
+        <h1>Welcome to the Quiz!</h1>
+        </br>
+        <p>Lets do this! To begin the quiz, please press the start button.</p>
+        </br>
+        <button id="startup">Start Quiz</button>
+    </div>
+
+    <div id="questionpage">
+        <h1>Question #<span id="questiontitle">1</span></h1>
+        </br>
+        <div id="question"></div>
+        </br>
+        <div id="answer"></div>
+    </div>
+     
+    <button id="submit">Get Results</button>
     <div id="results"></div>
 
     <script src="./assets/javascript/questions.js"></script>

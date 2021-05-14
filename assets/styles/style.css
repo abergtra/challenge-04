@@ -1,7 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Header Formatting */
+.header-container {
+    padding: 30px 50px;
+    
+}
+
+.header-container .viewhigh {
+    color: blueviolet;
+    display: inline;
+}
+
+.header-container .counter {
+    float: right;
+}
+
+/* Body Formatting */
 body{
-	font-size: 20px;
-	font-family: sans-serif;
-	color: #333;
+    font-family: Helvetica, Arial, sans-serif;
+    color: black;
 }
 .question{
 	font-weight: 600;

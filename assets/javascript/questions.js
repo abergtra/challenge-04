@@ -13,7 +13,7 @@ var myQuestions = [
     {
         question: "What is the outcome of the following code snippet?",
         answers: {
-            A: 'log(\'Hello world\') is printed to the console', 
+            A: "log('Hello world') is printed to the console", 
             B: '\'Hello world\' is printed to the console with single quotation marks', 
             C: 'Hello world is stored as a variable', 
             D: 'Hello world is printed to the console'

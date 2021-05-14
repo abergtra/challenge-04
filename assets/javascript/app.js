@@ -1,10 +1,25 @@
 
   
-var quizContainer = document.getElementById('quiz');
+var questionContainer = document.getElementById('question');
+var answerContainer = document.getElementById('answer');
 var resultsContainer = document.getElementById('results');
 var submitButton = document.getElementById('submit');
+var startButton = document.getElementById('startup');
+var timer = document.getElementById('timer'); 
 
-generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
+function tickingTime(timer){
+    var seconds = 5;
+    var countdown = setInterval(function(){
+        if (seconds>0){
+            seconds--;
+            timer.innerHTML= seconds;
+        } else{
+            alert("You ran out of time!")
+            clearInterval(countdown);
+            //input action when timer runs out
+        }
+    }, 1000);
+}
 
 function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
 
@@ -84,4 +99,20 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
 	submitButton.onclick = function(){
 		showResults(questions, quizContainer, resultsContainer);
 	}
+}
+
+generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
+tickingTime(timer);
+
+var visible = true;
+startButton.onclick = function(){
+
+    if (visible){
+        quizContainer.style.display = "none";
+        visible = false;
+    } else {
+        quizContainer.style.display = "block";
+        visible = true;
+    }
+    //block to come back
 }
