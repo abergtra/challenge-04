@@ -15,30 +15,29 @@
 body { 
     background-color: var(--primary);
     color: var(--secondary);
-    
 }
 
 /* Header Formatting */
 .header-container {
     padding: 30px 50px;
-    
+    display: flex;
+    justify-content: space-between;
 }
 
 .header-container .viewhigh {
-    color: blueviolet;
-    display: inline;
+    color: var(--btncolor);
 }
 
-.header-container .counter {
-    float: right;
+.header-container .viewhigh:hover {
+    color: var(--btnhover);
+    cursor: pointer;
 }
+
 
 /* Page Content Formatting */
 
 .pagecontent {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+    display: block;
     align-items: center;
     text-align: center;
 }
@@ -84,3 +83,13 @@ input {
 }
 
 /* high score table format */
+.score-header, .score-list{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 15px;
+    width: 400px;
+    background-color: var(--btnhover);
+}
+.score-list{
+    background-color: var(--tablebackground);
+}
