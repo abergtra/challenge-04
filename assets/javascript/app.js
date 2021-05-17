@@ -1,11 +1,17 @@
 
   
-var questionContainer = document.getElementById('question');
-var answerContainer = document.getElementById('answer');
+var quizContainer = document.getElementById('quiz');
 var resultsContainer = document.getElementById('results');
 var submitButton = document.getElementById('submit');
 var startButton = document.getElementById('startup');
 var timer = document.getElementById('timer'); 
+var byeHead = document.getElementById('head');
+
+var testButton = document.getElementById('test');
+var testextContainer = document.getElementById('testext');
+var testextContainer2 = document.getElementById('testext2');
+testextContainer.style.display = "none";
+testextContainer2.style.display = "none";
 
 function tickingTime(timer){
     var seconds = 5;
@@ -14,7 +20,7 @@ function tickingTime(timer){
             seconds--;
             timer.innerHTML= seconds;
         } else{
-            alert("You ran out of time!")
+            //alert("You ran out of time!")
             clearInterval(countdown);
             //input action when timer runs out
         }
@@ -108,11 +114,33 @@ var visible = true;
 startButton.onclick = function(){
 
     if (visible){
-        quizContainer.style.display = "none";
+        byeHead.style.display = "none";
         visible = false;
     } else {
-        quizContainer.style.display = "block";
+        byeHead.style.display = "block";
         visible = true;
+    }
+    //block to come back
+}
+
+var visibleTest = 0;
+testButton.onclick = function(){
+
+    if (visibleTest==0){
+        quizContainer.style.display = "none";
+        testextContainer.style.display = "block";
+        testextContainer2.style.display = "none";
+        visibleTest++;
+    } else if (visibleTest==1){
+        quizContainer.style.display = "none";
+        testextContainer.style.display = "none";
+        testextContainer2.style.display = "block";
+        visibleTest++;
+    } else {
+        quizContainer.style.display = "block";
+        testextContainer.style.display = "none";
+        testextContainer2.style.display = "none";
+        visibleTest = 0;
     }
     //block to come back
 }

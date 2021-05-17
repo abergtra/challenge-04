@@ -11,27 +11,75 @@
 <body>
     <header class="header-container">
         <p id="head" class="viewhigh">View High Scores</p>
-        <p class="counter">Time: <span id="timer">60</span></p>
+        <p class="counter">Time: <span id="timer">5</span></p>
     </header>
-    
-    <div id="startpage">
-        <h1>Welcome to the Quiz!</h1>
-        </br>
-        <p>Lets do this! To begin the quiz, please press the start button.</p>
-        </br>
-        <button id="startup">Start Quiz</button>
+
+    <div id="startpage" class="pagecontent">
+        <p class="pctitle">Coding Quiz Challenge</p>
+        <p class="pcbody">
+            Try to answer the following code-related questions within the time limit. <br>
+            Keep in mind that incorrect answers will penalize your score/time by ten seconds.<br>
+            Good luck!
+        </p>
+        <p>
+            <button id="startquiz" class="pcbutton">Start Quiz</button>
+        </p>
     </div>
 
-    <div id="questionpage">
-        <h1>Question #<span id="questiontitle">1</span></h1>
-        </br>
-        <div id="question"></div>
-        </br>
-        <div id="answer"></div>
+    <div id="questionpage" class="pagecontent">
+        <p class="pctitle">Question #<span id="qnum">1</span></p>
+        <div id="questiontext" class="pcbody"></div>
+        <p class="multibuttons">
+        <button id="answerA" class="pcbutton"></button>
+        <button id="answerB" class="pcbutton"></button>
+        <button id="answerC" class="pcbutton"></button>
+        <button id="answerD" class="pcbutton"></button>
+        </p>
     </div>
-     
-    <button id="submit">Get Results</button>
-    <div id="results"></div>
+
+    <div id="intialspage" class="pagecontent">
+        <p class="pctitle">All Done!</p>
+        <p class="pcbody">
+            Your final score is: <span id="finalscore"></span> out of <span id="maxscore"></span></br>
+            Please enter your initials to save your high score!
+        </p>
+        <input type="text" placeholder="Your initials here..." name="initials" id="initials"/>
+        <p>
+        <button id="submithighscore" class="pcbutton">Submit Score</button>
+        </p>
+    </div>
+
+    <div id="highscorepage" class="pagecontent">
+        <p class="pctitle">High Scores</p>
+        <div id="highscorelist" class="pcbody">
+            <div class="score-header">
+                <p class="initial-head">Initials</p>
+                <p class="score-head">Scores</p>
+            </div>
+            <div class="score-list">
+                <div id="HS-initials"></div>
+                <div id="HS-score"></div>
+            </div>
+        </div>
+        <p class="multibuttons">
+        <button id="replay" class="pcbutton"></button>
+        <button id="clearscores" class="pcbutton"></button>
+        </p>
+    </div>
+
+
+ <!--   
+     <div id="quiz"></div>
+    <div id="testext">This is a test</div>
+    <div id="testext2">This is the second test</div>
+</br>
+        <button id="startup">Start Quiz</button>
+        <button id="submit">Get Results</button>
+        <button id="test">Test</button>
+    <div id="results"></div> 
+-->
+
+    
 
     <script src="./assets/javascript/questions.js"></script>
     <script src="./assets/javascript/app.js"></script>
