@@ -10,16 +10,16 @@
 // testextContainer2.style.display = "none";
 
 //Connect to Buttons
-// var startButton = document.getElementById('startquiz');
-// var viewscoreButton = document.getElementById('head');
-// var replayButton = document.getElementById("replay");
-// var clearscoreButton = document.getElementById("clearscores");
-// var submitScore = document.getElementById("submithighscore");
+var startButton = document.getElementById('startquiz');
+var viewscoreButton = document.getElementById('head');
+var replayButton = document.getElementById("replay");
+var clearscoreButton = document.getElementById("clearscores");
+var submitScore = document.getElementById("submithighscore");
 var testingButton = document.getElementById("clicktest");
 
 
 //timer
-//var timer = document.getElementById('timer'); 
+var timer = document.getElementById('timer'); 
 
 //Pages
 var startPage = document.getElementsByClassName('startpage');
@@ -29,19 +29,19 @@ var hscorePage = document.getElementsByClassName('highscorepage');
 
 
 //Questions and Answer buttons
-// var questionNumber = document.getElementById('qnum');
-// var questionText = document.getElementById('questiontext');
-// var answerA = document.getElementById('answerA');
-// var answerB = document.getElementById('answerB');
-// var answerC = document.getElementById('answerC');
-// var answerD = document.getElementById('answerD');
+var questionNumber = document.getElementById('qnum');
+var questionText = document.getElementById('questiontext');
+var answerA = document.getElementById('answerA');
+var answerB = document.getElementById('answerB');
+var answerC = document.getElementById('answerC');
+var answerD = document.getElementById('answerD');
 
 //Locations with info to fill
-// var finalScore = document.getElementById("finalscore");
-// var maxScore = document.getElementById("maxscore");
-// var userInitials = document.getElementById("initials");
-//  var scoreContainer = document.getElementById("HS-score");
-//  var initialsContainer = document.getElementById("HS-initials");
+var finalScore = document.getElementById("finalscore");
+var maxScore = document.getElementById("maxscore");
+var userInitials = document.getElementById("initials");
+ var scoreContainer = document.getElementById("HS-score");
+ var initialsContainer = document.getElementById("HS-initials");
 
 //Functions to control Page Visibility
 function hideStartPg(){
@@ -229,6 +229,7 @@ testingButton.onclick = function(){
     };
     //block to come back
 }
+//set start page and hide others
 findStartPg();
 hideQuestPg();
 hideInitPg();

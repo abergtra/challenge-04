@@ -22,20 +22,20 @@
             Keep in mind that incorrect answers will penalize your score/time by ten seconds.<br>
             Good luck!
         </p>
-        
+        <p>
             <button id="startquiz" class="pcbutton">Start Quiz</button>
-        
+        </p>
     </div>
 
     <div class="pagecontent questionpage">
         <p class="pctitle">Question #<span id="qnum">1</span></p>
         <div id="questiontext" class="pcbody"></div>
-        
+        <p class="multibuttons">
         <button id="answerA" class="pcbutton"></button>
         <button id="answerB" class="pcbutton"></button>
         <button id="answerC" class="pcbutton"></button>
         <button id="answerD" class="pcbutton"></button>
-        
+        </p>
     </div>
 
     <div class="pagecontent initialspage">
@@ -44,26 +44,30 @@
             Your final score is: <span id="finalscore"></span> out of <span id="maxscore"></span></br>
             Please enter your initials to save your high score!
         </p>
+        <p>
         <input type="text" placeholder="Your initials here..." name="initials" id="initials"/>
-        
+        </p>
+        <p>
         <button id="submithighscore" class="pcbutton">Submit Score</button>
-        
+        </p>
     </div>
 
     <div class="pagecontent highscorepage">
         <p class="pctitle">High Scores</p>
-        <div class="score-header">
-            <p class="initial-head">Initials</p>
-            <p class="score-head">Scores</p>
-        </div>
-        <div class="score-list">
-            <div id="HS-initials">--</div>
-            <div id="HS-score">--</div>
-        </div>
-        
+        <div class="pcbody hsTable">
+            <div class="score-header">
+                <p class="initial-head">Initials</p>
+                <p class="score-head">Scores</p>
+            </div>
+            <div class="score-list">
+                <div id="HS-initials">--</div>
+                <div id="HS-score">--</div>
+            </div>
+        </div>    
+        <p class="multibuttons">
         <button id="replay" class="pcbutton">Play Again</button>
         <button id="clearscores" class="pcbutton">Clear High Scores</button>
-        
+        </p>
     </div>
 
 

@@ -71,8 +71,11 @@ body {
     cursor: pointer;
 }
 
-.multibuttons button{
-    display: block;
+.multibuttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 
 /* input format */
@@ -83,13 +86,20 @@ input {
 }
 
 /* high score table format */
-.score-header, .score-list{
+.hsTable {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+.score-header, .score-list{
     padding: 10px 15px;
     width: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
     background-color: var(--btnhover);
 }
 .score-list{
     background-color: var(--tablebackground);
 }
+
