@@ -218,6 +218,7 @@ submitScore.onclick = function(){
     }
     savedHighscores.push(currentHighscore);
     localStorage.setItem("savedHighscores", JSON.stringify(savedHighscores));
+    score = 0;
     openScorePG();
 };
 
