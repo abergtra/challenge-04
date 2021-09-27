@@ -19,10 +19,10 @@ var hscorePage = document.getElementsByClassName('highscorepage');
 //Connect to HTML Questions and Answer buttons
 var questionNumber = document.getElementById('qnum');
 var questionText = document.getElementById('questiontext');
-var answerA = document.getElementById('answerA');
-var answerB = document.getElementById('answerB');
-var answerC = document.getElementById('answerC');
-var answerD = document.getElementById('answerD');
+var buttonA = document.getElementById('answerA');
+var buttonB = document.getElementById('answerB');
+var buttonC = document.getElementById('answerC');
+var buttonD = document.getElementById('answerD');
 
 //Connect to HTML locations with info to fill
 var finalScore = document.getElementById("finalscore");
@@ -35,43 +35,45 @@ var initialsContainer = document.getElementById("HS-initials");
 var myQuestions = [
     {
       question: "Which of the following is the correct syntax to create a cookie using JavaScript?",
-      answersA: "document.cookie = 'key1 = value1; key2 = value2; expires = date';", 
-      answersB: "browser.cookie = 'key1 = value1; key2 = value2; expires = date';", 
-      answersC: "window.cookie = 'key1 = value1; key2 = value2; expires = date';", 
-      answersD: "navigator.cookie = 'key1 = value1; key2 = value2; expires = date';",
-      correctAnswer: 'A'
+      choiceA: "document.cookie = 'key1 = value1; key2 = value2; expires = date';", 
+      choiceB: "browser.cookie = 'key1 = value1; key2 = value2; expires = date';", 
+      choiceC: "window.cookie = 'key1 = value1; key2 = value2; expires = date';", 
+      choiceD: "navigator.cookie = 'key1 = value1; key2 = value2; expires = date';",
+      correctAnswer: 'answerA'
     },
     {
         question: "Which built-in method combines the text of two strings and returns a new string?",
-        answersA: "append()", 
-        answersB: "concat()", 
-        answersC: "attach()", 
-        answersD: "None of the above.",
-        correctAnswer: 'B'
+        choiceA: "append()", 
+        choiceB: "concat()", 
+        choiceC: "attach()", 
+        choiceD: "None of the above.",
+        correctAnswer: 'answerB'
     },
     {
         question: "Which built-in method returns the characters in a string beginning at the specified location?",
-        answersA: "substr()", 
-        answersB: "getSubstring()", 
-        answersC: "slice()", 
-        answersD: "None of the above.",
-        correctAnswer: 'A'
+        choiceA: "substr()", 
+        choiceB: "getSubstring()", 
+        choiceC: "slice()", 
+        choiceD: "None of the above.",
+        correctAnswer: 'answerA'
     },
     {
         question: "Which of the following function of Number object defines how many total digits to display of a number?",
-        answersA: "toExponential()", 
-        answersB: "toFixed()", 
-        answersC: "toLocaleString()", 
-        answersD: "toPrecision()",
-        correctAnswer: 'D'
+        choiceA: "toExponential()", 
+        choiceB: "toFixed()", 
+        choiceC: "toLocaleString()", 
+        choiceD: "toPrecision()",
+        correctAnswer: 'answerD'
     },
   ];
 
 //Constants
-questionNumber = 1;
-var finalQuestion = myQuestions.length;
-var startingScore = 0;
+var currentQuestionIndex = 0;
+var finalQuestionIndex = myQuestions.length;
+var score = 0;
 var timePenalty = 10;
+var correct;
+var seconds = 75;
 
 
 //Functions to control Page Visibility
@@ -92,7 +94,7 @@ function hideQuestPg(){
 };
 function findQuestPg(){
     for (var i = 0; i < questPage.length; i++){
-    questPage[i].style.display = "block";
+        questPage[i].style.display = "block";
     };
 };
 function hideInitPg(){
@@ -118,7 +120,7 @@ function findScorePg(){
 
 //Countdown Timer Function
 function tickingTime(timer){
-    var seconds = 5;
+    
     var countdown = setInterval(function(){
         if (seconds>0){
             seconds--;
@@ -133,18 +135,18 @@ function tickingTime(timer){
 
 //Generate Question Function
 function generateQuestion(){
-    
-    if (questionNumber === finalQuestion){
+    thisQnum = currentQuestionIndex + 1;
+    if (currentQuestionIndex === finalQuestionIndex){
         openInitPG();
         //timer=0
     } else {
-        currentQuestion = myQuestions[questionNumber - 1];
+        var currentQuestion = myQuestions[currentQuestionIndex];
         questionText.innerHTML = currentQuestion.question;
-        answerA.innerHTML = currentQuestion.answersA;
-        answerB.innerHTML = currentQuestion.answersB;
-        answerC.innerHTML = currentQuestion.answersC;
-        answerD.innerHTML = currentQuestion.answersD;
-        questionNumber++;
+        questionNumber.innerHTML = thisQnum;
+        answerA.innerHTML = currentQuestion.choiceA;
+        answerB.innerHTML = currentQuestion.choiceB;
+        answerC.innerHTML = currentQuestion.choiceC;
+        answerD.innerHTML = currentQuestion.choiceD;
     }
 };
 
@@ -157,7 +159,7 @@ startButton.onclick = function(){
 
 // function for last question being answered
 function checkAnswer(answer){
-    correct = quizQuestions[currentQuestionIndex].correctAnswer;
+    correct = myQuestions[currentQuestionIndex].correctAnswer;
 
     if (answer === correct && currentQuestionIndex !== finalQuestionIndex){
         score++;
@@ -167,7 +169,7 @@ function checkAnswer(answer){
         //display in the results div that the answer is correct.
     } else if (answer !== correct && currentQuestionIndex !== finalQuestionIndex) {
         // If incorrect, subtract 10sec from timer
-        count = count - penalty;
+        seconds = seconds - timePenalty;
         alert("Incorrect!")
         currentQuestionIndex++;
         generateQuestion();
