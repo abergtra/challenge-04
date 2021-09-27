@@ -34,12 +34,12 @@ var initialsContainer = document.getElementById("HS-initials");
 //Questions
 var myQuestions = [
     {
-      question: "Which of the following is the correct syntax to create a cookie using JavaScript?",
-      choiceA: "document.cookie = 'key1 = value1; key2 = value2; expires = date';", 
-      choiceB: "browser.cookie = 'key1 = value1; key2 = value2; expires = date';", 
-      choiceC: "window.cookie = 'key1 = value1; key2 = value2; expires = date';", 
-      choiceD: "navigator.cookie = 'key1 = value1; key2 = value2; expires = date';",
-      correctAnswer: 'answerA'
+        question: "Which of the following is the correct syntax to create a cookie using JavaScript?",
+        choiceA: "document.cookie = 'key1 = value1; key2 = value2; expires = date';", 
+        choiceB: "browser.cookie = 'key1 = value1; key2 = value2; expires = date';", 
+        choiceC: "window.cookie = 'key1 = value1; key2 = value2; expires = date';", 
+        choiceD: "navigator.cookie = 'key1 = value1; key2 = value2; expires = date';",
+        correctAnswer: 'answerA'
     },
     {
         question: "Which built-in method combines the text of two strings and returns a new string?",
@@ -65,6 +65,22 @@ var myQuestions = [
         choiceD: "toPrecision()",
         correctAnswer: 'answerD'
     },
+    {
+        question: "Who invented JavaScript?",
+        choiceA: "Douglas Crockford",
+        choiceB: "Sheryl Sandberg",
+        choiceC: "Brendan Eich",
+        choiceD: "Asher Bergtraun",
+        correctAnswer: "answerC"
+    },
+    {
+        question: "Which tool can you use to ensure code quality?",
+        choiceA: "Angular",
+        choiceB: "jQuery",
+        choiceC: "RequireJS",
+        choiceD: "ESLint",
+        correctAnswer: "answerD"
+    }
   ];
 
 //Constants
