@@ -189,8 +189,36 @@ function checkAnswer(answer){
 
 //initals page submit button
 submitScore.onclick = function(){
+    if(userInitials.value ==="") {
+        alert("You must input your initials!")
+        return false;
+    } else {
+        var savedHighscores = JSON.parse(localStorage.getItem("savedHighscores")) || [];
+        var currentUser = userInitials.value.trim();
+        var currentHighscore = {
+            name : currentUser,
+            score : score
+        };
+    }
+    savedHighscores.push(currentHighscore);
+    localStorage.setItem("savedHighscores", JSON.stringify(savedHighscores));
     openScorePG();
 };
+
+//Function to populate high scores on score page
+function generateScores(){
+    initialsContainer.innerHTML = "";
+    scoreContainer.innerHTML = "";
+    var highscores = JSON.parse(localStorage.getItem("savedHighscores")) || [];
+    for (i=0; i<highscores.length; i++){
+        var newNameSpan = document.createElement("li");
+        var newScoreSpan = document.createElement("li");
+        newNameSpan.textContent = highscores[i].name;
+        newScoreSpan.textContent = highscores[i].score;
+        initialsContainer.appendChild(newNameSpan);
+        scoreContainer.appendChild(newScoreSpan);
+    }
+}
 
 //initals page submit button
 replayButton.onclick = function(){
@@ -218,6 +246,7 @@ function openScorePG(){
     hideQuestPg();
     hideInitPg();
     findScorePg();
+    generateScores();
 };
 function openStartPG(){
     findStartPg();
