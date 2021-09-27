@@ -10,6 +10,7 @@ It uses local storage to post and save high scores so you can compete with frien
 ![First Page](./assets/images/page1.png)
 
 Follow this [link](https://github.com/abergtra/challenge-04) for the GitHub repository.
+Follow this [link](https://abergtra.github.io/challenge-04/) for the live URL.
 
 # Table of Contents 
 * [Installation](#-Installation)
