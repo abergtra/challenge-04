@@ -227,6 +227,13 @@ replayButton.onclick = function(){
     openStartPG();
 };
 
+//score page clear high score button
+clearscoreButton.onclick = function(){
+    window.localStorage.clear();
+    initialsContainer.textContent = "";
+    scoreContainer.textContent = "";
+};
+
 //page opening functions
 function openQuestPG(){
     hideStartPg();
