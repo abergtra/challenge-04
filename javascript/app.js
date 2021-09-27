@@ -72,8 +72,9 @@ var currentQuestionIndex = 0;
 var finalQuestionIndex = myQuestions.length;
 var score = 0;
 var timePenalty = 10;
+var totalTime = 60
 var correct;
-var seconds = 75;
+var seconds;
 
 
 //Functions to control Page Visibility
@@ -104,7 +105,11 @@ function hideInitPg(){
 };
 function findInitPg(){
     for (var i = 0; i < initPage.length; i++){
-    initPage[i].style.display = "block";
+        finalScore.innerHTML=score;
+        maxScore.innerHTML=myQuestions.length
+        seconds = 0;
+        timer.innerHTML= seconds;
+        initPage[i].style.display = "block";
     };
 };
 function hideScorePg(){
@@ -119,15 +124,16 @@ function findScorePg(){
 };
 
 //Countdown Timer Function
-function tickingTime(timer){
+function tickingTime(){
     
     var countdown = setInterval(function(){
         if (seconds>0){
             seconds--;
             timer.innerHTML= seconds;
         } else{
-            //alert("You ran out of time!")
+            alert("Quiz done! You finished or ran out of time!")
             clearInterval(countdown);
+            openInitPG();
             //input action when timer runs out
         }
     }, 1000);
@@ -152,9 +158,9 @@ function generateQuestion(){
 
 // function for start quiz button being pressed
 startButton.onclick = function(){
+    seconds = totalTime;
+    tickingTime();
     openQuestPG();
-    //tickingTime(timer);
-    //generateQuestion();
 };
 
 // function for last question being answered
@@ -175,9 +181,11 @@ function checkAnswer(answer){
         generateQuestion();
         //display in the results div that the answer is wrong.
     } else{
-        showScore();
+        openInitPG();
     };
 };
+
+
 
 //initals page submit button
 submitScore.onclick = function(){
@@ -186,6 +194,8 @@ submitScore.onclick = function(){
 
 //initals page submit button
 replayButton.onclick = function(){
+    currentQuestionIndex = 0;
+    timer.innerHTML = totalTime;
     openStartPG();
 };
 
