@@ -1,5 +1,5 @@
 # Project Title
-Challenge 4 
+coding-quiz 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 # Description
